@@ -1,5 +1,5 @@
 #
-# this file is generated via update.pl
+# this file is generated via docker-builder/update.pl
 #
 # do not edit it directly
 #
