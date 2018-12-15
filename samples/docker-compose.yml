@@ -1,0 +1,34 @@
+---
+version: '3'
+
+services:
+  db:
+    image: postgres
+    container_name: sl-db
+    environment:
+      POSTGRES_PASSWORD: sql-ledger
+      POSTGRES_USER: sql-ledger
+    volumes:
+      - sldb:/var/lib/postgresql/data
+
+  dbdamin:
+    image: adminer
+    container_name: sl-dbadmin
+    environment:
+      ADMINER_DESIGN: nette
+    ports:
+      - 8081:8080
+
+  app:
+    image: tekki/sql-ledger:latest
+    container_name: sl-app
+    ports:
+      - 8080:80
+    volumes:
+      - sldata:/var/sldata
+
+volumes:
+  sldata:
+    external: true
+  sldb:
+    external: true

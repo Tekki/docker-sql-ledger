@@ -1,0 +1,13 @@
+#! /bin/bash
+%= $global->{warning}
+
+% for my $file (qw|sql-ledger wlprinter|) {
+if [ ! -f <%= $global->{data} %>/etc/<%= $file %>.conf ]; then
+  cp <%= $global->{bin} %>/<%= $file %>.conf.default <%= $global->{data} %>/etc/<%= $file %>.conf
+fi
+ln -s <%= $global->{data} %>/etc/<%= $file %>.conf <%= $global->{bin} %>/<%= $file %>.conf
+
+% }
+chown -hR <%= $global->{user} %>:<%= $global->{group} %> css/ spool/ templates/ users/
+
+exec "$@"

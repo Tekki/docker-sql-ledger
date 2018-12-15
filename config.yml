@@ -1,0 +1,37 @@
+---
+
+docker:
+  repo: tekki/sql-ledger
+
+global:
+  bin: /var/www/sql-ledger
+  data: /var/sldata
+  datafolders:
+    - css
+    - images
+    - users
+    - templates
+    - spool
+  group: www-data
+  url: sql-ledger
+  user: www-data
+
+releases:
+  main:
+    latest: true
+    tag: v3.2.07.001
+    version: 3.2.7.1
+  extended:
+    tag: v3.2.07.001-e
+    version: 3.2.7.1-e
+  dws:
+    tag: v3.2.07
+    version: 3.2.7
+
+templates:
+  - source: docker-entrypoint-sh.ep
+    target: docker-entrypoint.sh
+  - source: dockerfile.ep
+    target: Dockerfile
+  - source: sql-ledger-httpd-conf.ep
+    target: sql-ledger-httpd.conf

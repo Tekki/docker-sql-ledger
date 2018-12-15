@@ -1,0 +1,38 @@
+Alias /<%= $global->{url} %> <%= $global->{bin} %>/
+<Directory <%= $global->{bin} %>>
+  AllowOverride All
+  AddHandler cgi-script .pl
+  Options ExecCGI Includes FollowSymlinks
+  Order Allow,Deny
+  Allow from All
+</Directory>
+
+<Directory <%= $global->{bin} %>/users>
+  Order Deny,Allow
+  Deny from All
+</Directory>
+
+<Directory <%= $global->{bin} %>/bin>
+  Order Deny,Allow
+  Deny from All
+</Directory>
+
+<Directory <%= $global->{bin} %>/SL>
+  Order Deny,Allow
+  Deny from All
+</Directory>
+
+<Directory <%= $global->{bin} %>/sql>
+  Order Deny,Allow
+  Deny from All
+</Directory>
+
+<Directory <%= $global->{bin} %>/templates>
+  Order Deny,Allow
+  Deny from All
+</Directory>
+
+<Directory <%= $global->{bin} %>/locale>
+  Order Deny,Allow
+  Deny from All
+</Directory>

@@ -1,0 +1,63 @@
+#
+# this file is generated via update.pl
+#
+# do not edit it directly
+#
+
+FROM debian:stretch
+LABEL maintainer="Rolf Stöckli (Tekki) <tekki@tekki.ch>"
+
+RUN set -e; \\
+    apt-get update && apt-get install -y --no-install-recommends \\
+    texlive-xetex \\
+    texlive-fonts-extra
+
+RUN set -e; \\
+    apt-get install -y --no-install-recommends \\
+    apache2 \\
+    ca-certificates \\
+    libdbd-pg-perl \\
+    libjson-pp-perl \\
+    pdftk \\
+    postgresql-client \\
+    wget \\
+    vim
+
+ENV SL_VERSION <%= $release->{version} %>
+ENV SL_TAG <%= $release->{tag} %>
+ENV SL_URL="https://github.com/Tekki/sql-ledger/archive/$SL_TAG.tar.gz"
+ENV TEXLIVE_LANG german
+
+RUN set -e; \\
+    for lang in "$TEXLIVE_LANG"; do \\
+      apt-get install -y "texlive-lang-$lang"; \\
+    done; \\
+    rm -r /var/lib/apt/lists/*
+
+COPY sql-ledger-httpd.conf /etc/apache2/sites-available/sql-ledger.conf
+
+RUN set -e; \\
+    mkdir -p <%= "$global->{data}/etc" %>; \\
+    mkdir -p <%= $global->{bin} %>; \\
+    mkdir -p /usr/src; \\
+    cd /usr/src; \\
+    wget -q -O sql-ledger.tar.gz "$SL_URL" && \\
+    if [ -n "$SL_SHA256" ]; then \\
+      echo "$SL_SHA256 sql-ledger.tar.gz" | sha256sum -c -; \\
+    fi; \\
+    tar -xzf sql-ledger.tar.gz -C <%= $global->{bin} %> --strip 1; \\
+    cd <%= $global->{bin} %>; \\
+% for my $folder ($global->{datafolders}->@*) {
+    mv <%= $folder %> <%= $global->{data} %>/ && ln -s <%= "$global->{data}/$folder" %> .; \\
+% }
+    a2enmod -q cgid; a2ensite -q sql-ledger
+
+VOLUME <%= $global->{data} %>
+WORKDIR <%= $global->{bin} %>
+EXPOSE 80
+
+COPY docker-entrypoint.sh /usr/local/bin
+RUN chmod 0755 /usr/local/bin/docker-entrypoint.sh
+ENTRYPOINT ["docker-entrypoint.sh"]
+
+CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
