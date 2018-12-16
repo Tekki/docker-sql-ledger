@@ -27,8 +27,9 @@ The container will create and use a volume located at `/var/sldata` with the fol
     ├ etc
     │  ├ sql-ledger.conf
     │  └ wlprinter.conf
+    ├ images
     ├ spool
     ├ templates
     └ users
 
-You find a sample compose file at [samples/docker-compose.yml](https://github.com/Tekki/docker-sql-ledger/samples/docker-compose.yml).
+You find a sample compose file at [samples/docker-compose.yml](https://github.com/Tekki/docker-sql-ledger/blob/master/samples/docker-compose.yml).

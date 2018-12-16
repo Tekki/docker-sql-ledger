@@ -1,7 +1,7 @@
 ---
 
 docker:
-  repo: tekki/sql-ledger
+  image: tekki/sql-ledger
 
 global:
   bin: /var/www/sql-ledger
@@ -9,9 +9,9 @@ global:
   datafolders:
     - css
     - images
-    - users
-    - templates
     - spool
+    - templates
+    - users
   group: www-data
   url: sql-ledger
   user: www-data
@@ -19,11 +19,11 @@ global:
 releases:
   main:
     latest: true
-    tag: v3.2.07.001
-    version: 3.2.7.1
+    tag: v3.2.07.002
+    version: 3.2.7.2
   extended:
-    tag: v3.2.07.001-e
-    version: 3.2.7.1-e
+    tag: v3.2.07.002-e
+    version: 3.2.7.2-e
   dws:
     tag: v3.2.07
     version: 3.2.7

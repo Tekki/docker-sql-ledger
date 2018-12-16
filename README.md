@@ -7,8 +7,8 @@ For more informations about SQL-Ledger and the code used for this image please v
 
 # Supported tags and respective Dockerfile links
 
-* SQL-Ledger improved by Tekki: [3.2.7.1, latest (main/Dockerfile)](https://github.com/Tekki/docker-sql-ledger/blob/master/main/Dockerfile).
-* SQL-Ledger extended by Tekki: [3.2.7.1-e, extended (extended/Dockerfile)](https://github.com/Tekki/docker-sql-ledger/blob/master/extended/Dockerfile).
+* SQL-Ledger improved by Tekki: [3.2.7.2, latest (main/Dockerfile)](https://github.com/Tekki/docker-sql-ledger/blob/master/main/Dockerfile).
+* SQL-Ledger extended by Tekki: [3.2.7.2-e, extended (extended/Dockerfile)](https://github.com/Tekki/docker-sql-ledger/blob/master/extended/Dockerfile).
 * SQL-Ledger original version by DWS: [3.2.7, dws (dws/Dockerfile)](https://github.com/Tekki/docker-sql-ledger/blob/master/dws/Dockerfile).
 
 # How to use this image
@@ -25,8 +25,9 @@ The container will create and use a volume located at `/var/sldata` with the fol
     ├ etc
     │  ├ sql-ledger.conf
     │  └ wlprinter.conf
+    ├ images
     ├ spool
     ├ templates
     └ users
 
-You find a sample compose file at [samples/docker-compose.yml](https://github.com/Tekki/docker-sql-ledger/samples/docker-compose.yml).
+You find a sample compose file at [samples/docker-compose.yml](https://github.com/Tekki/docker-sql-ledger/blob/master/samples/docker-compose.yml).

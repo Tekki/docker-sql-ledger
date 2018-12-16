@@ -19,9 +19,6 @@ RUN set -e; \\
     wget \\
     vim
 
-ENV SL_VERSION <%= $release->{version} %>
-ENV SL_TAG <%= $release->{tag} %>
-ENV SL_URL="https://github.com/Tekki/sql-ledger/archive/$SL_TAG.tar.gz"
 ENV TEXLIVE_LANG german
 
 RUN set -e; \\
@@ -29,6 +26,10 @@ RUN set -e; \\
       apt-get install -y "texlive-lang-$lang"; \\
     done; \\
     rm -r /var/lib/apt/lists/*
+
+ENV SL_VERSION <%= $release->{version} %>
+ENV SL_TAG <%= $release->{tag} %>
+ENV SL_URL="https://github.com/Tekki/sql-ledger/archive/$SL_TAG.tar.gz"
 
 COPY sql-ledger-httpd.conf /etc/apache2/sites-available/sql-ledger.conf
 

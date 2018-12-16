@@ -23,9 +23,6 @@ RUN set -e; \
     wget \
     vim
 
-ENV SL_VERSION 3.2.7
-ENV SL_TAG v3.2.07
-ENV SL_URL="https://github.com/Tekki/sql-ledger/archive/$SL_TAG.tar.gz"
 ENV TEXLIVE_LANG german
 
 RUN set -e; \
@@ -33,6 +30,10 @@ RUN set -e; \
       apt-get install -y "texlive-lang-$lang"; \
     done; \
     rm -r /var/lib/apt/lists/*
+
+ENV SL_VERSION 3.2.7
+ENV SL_TAG v3.2.07
+ENV SL_URL="https://github.com/Tekki/sql-ledger/archive/$SL_TAG.tar.gz"
 
 COPY sql-ledger-httpd.conf /etc/apache2/sites-available/sql-ledger.conf
 
@@ -49,9 +50,9 @@ RUN set -e; \
     cd /var/www/sql-ledger; \
     mv css /var/sldata/ && ln -s /var/sldata/css .; \
     mv images /var/sldata/ && ln -s /var/sldata/images .; \
-    mv users /var/sldata/ && ln -s /var/sldata/users .; \
-    mv templates /var/sldata/ && ln -s /var/sldata/templates .; \
     mv spool /var/sldata/ && ln -s /var/sldata/spool .; \
+    mv templates /var/sldata/ && ln -s /var/sldata/templates .; \
+    mv users /var/sldata/ && ln -s /var/sldata/users .; \
     a2enmod -q cgid; a2ensite -q sql-ledger
 
 VOLUME /var/sldata
