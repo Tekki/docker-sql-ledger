@@ -5,7 +5,6 @@
 #
 
 FROM debian:stretch
-LABEL maintainer="Rolf Stöckli (Tekki) <tekki@tekki.ch>"
 
 RUN set -e; \
     apt-get update && apt-get install -y --no-install-recommends \

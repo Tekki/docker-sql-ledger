@@ -17,7 +17,7 @@ For more informations about SQL-Ledger and the code used for this image please v
 
 Starting a SQL-Ledger instance is simple:
 
-    $ docker run -d --name my-sql-ledger -p 80 tekki/sql-ledger:tag
+    $ docker run -d --name my-sql-ledger -p 80:80 tekki/sql-ledger:tag
 
 The database is expected to run in a separate container and XeTeX is used as PDF engine.
 

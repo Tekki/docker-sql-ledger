@@ -7,15 +7,15 @@ For more informations about SQL-Ledger and the code used for this image please v
 
 # Supported tags and respective Dockerfile links
 
-* SQL-Ledger improved by Tekki: [3.2.7.2, latest (main/Dockerfile)](https://github.com/Tekki/docker-sql-ledger/blob/master/main/Dockerfile).
-* SQL-Ledger extended by Tekki: [3.2.7.2-e, extended (extended/Dockerfile)](https://github.com/Tekki/docker-sql-ledger/blob/master/extended/Dockerfile).
+* SQL-Ledger improved by Tekki: [3.2.7.3, latest (main/Dockerfile)](https://github.com/Tekki/docker-sql-ledger/blob/master/main/Dockerfile).
+* SQL-Ledger extended by Tekki: [3.2.7.3-e, extended (extended/Dockerfile)](https://github.com/Tekki/docker-sql-ledger/blob/master/extended/Dockerfile).
 * SQL-Ledger original version by DWS: [3.2.7, dws (dws/Dockerfile)](https://github.com/Tekki/docker-sql-ledger/blob/master/dws/Dockerfile).
 
 # How to use this image
 
 Starting a SQL-Ledger instance is simple:
 
-    $ docker run -d --name my-sql-ledger -p 80 tekki/sql-ledger:tag
+    $ docker run -d --name my-sql-ledger -p 80:80 tekki/sql-ledger:tag
 
 The database is expected to run in a separate container and XeTeX is used as PDF engine.
 

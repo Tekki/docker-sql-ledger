@@ -5,7 +5,6 @@
 #
 
 FROM debian:stretch
-LABEL maintainer="Rolf Stöckli (Tekki) <tekki@tekki.ch>"
 
 RUN set -e; \
     apt-get update && apt-get install -y --no-install-recommends \
@@ -31,8 +30,8 @@ RUN set -e; \
     done; \
     rm -r /var/lib/apt/lists/*
 
-ENV SL_VERSION 3.2.7.2-e
-ENV SL_TAG v3.2.07.002-e
+ENV SL_VERSION 3.2.7.3-e
+ENV SL_TAG v3.2.07.003-e
 ENV SL_URL="https://github.com/Tekki/sql-ledger/archive/$SL_TAG.tar.gz"
 
 COPY sql-ledger-httpd.conf /etc/apache2/sites-available/sql-ledger.conf
