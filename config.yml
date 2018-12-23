@@ -19,11 +19,11 @@ global:
 releases:
   main:
     latest: true
-    tag: v3.2.07.003
-    version: 3.2.7.3
+    tag: v3.2.07.004
+    version: 3.2.7.4
   extended:
-    tag: v3.2.07.003-e
-    version: 3.2.7.3-e
+    tag: v3.2.07.004-e
+    version: 3.2.7.4-e
   dws:
     tag: v3.2.07
     version: 3.2.7
