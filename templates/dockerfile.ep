@@ -1,4 +1,4 @@
-%= $global->{warning}
+%= $warning
 
 FROM debian:stretch
 
@@ -26,7 +26,7 @@ RUN set -e; \\
     done; \\
     rm -r /var/lib/apt/lists/*
 
-ENV SL_VERSION <%= $release->{version} %>
+ENV SL_VERSION <%= $release->{versions}->[0] %>
 ENV SL_TAG <%= $release->{tag} %>
 ENV SL_URL="https://github.com/Tekki/sql-ledger/archive/$SL_TAG.tar.gz"
 

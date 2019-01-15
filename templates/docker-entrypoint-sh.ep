@@ -1,5 +1,5 @@
 #! /bin/bash
-%= $global->{warning}
+%= $warning
 
 % for my $file (qw|sql-ledger wlprinter|) {
 if [ ! -f <%= $global->{data} %>/etc/<%= $file %>.conf ]; then

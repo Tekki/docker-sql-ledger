@@ -1,7 +1,9 @@
 ---
-
 docker:
   image: tekki/sql-ledger
+
+git:
+  repo: https://github.com/Tekki/docker-sql-ledger
 
 global:
   bin: /var/www/sql-ledger
@@ -19,14 +21,17 @@ global:
 releases:
   main:
     latest: true
-    tag: v3.2.07.004
-    version: 3.2.7.4
+    tag: v3.2.07.005
+    versions:
+      - 3.2.7.5
   extended:
-    tag: v3.2.07.004-e
-    version: 3.2.7.4-e
+    tag: v3.2.07.005-e
+    versions:
+      - 3.2.7.5-e
   dws:
     tag: v3.2.07
-    version: 3.2.7
+    versions:
+      - 3.2.7
 
 templates:
   - source: docker-entrypoint-sh.ep
