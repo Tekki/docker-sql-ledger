@@ -30,8 +30,8 @@ RUN set -e; \
     done; \
     rm -r /var/lib/apt/lists/*
 
-ENV SL_VERSION 3.2.7.5-e
-ENV SL_TAG v3.2.07.005-e
+ENV SL_VERSION 3.2.7.6-e
+ENV SL_TAG v3.2.07.006-e
 ENV SL_URL="https://github.com/Tekki/sql-ledger/archive/$SL_TAG.tar.gz"
 
 COPY sql-ledger-httpd.conf /etc/apache2/sites-available/sql-ledger.conf

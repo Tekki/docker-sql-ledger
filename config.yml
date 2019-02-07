@@ -21,13 +21,13 @@ global:
 releases:
   main:
     latest: true
-    tag: v3.2.07.005
+    tag: v3.2.07.006
     versions:
-      - 3.2.7.5
+      - 3.2.7.6
   extended:
-    tag: v3.2.07.005-e
+    tag: v3.2.07.006-e
     versions:
-      - 3.2.7.5-e
+      - 3.2.7.6-e
   dws:
     tag: v3.2.07
     versions:
