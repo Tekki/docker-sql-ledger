@@ -1,6 +1,6 @@
 %= $warning
 
-FROM debian:stretch
+FROM <%= $from %>
 
 RUN set -e; \\
     apt-get update && apt-get install -y --no-install-recommends \\

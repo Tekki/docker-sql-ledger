@@ -1,5 +1,6 @@
 ---
 docker:
+  from: debian:stretch
   image: tekki/sql-ledger
 
 git:
@@ -21,13 +22,13 @@ global:
 releases:
   main:
     latest: true
-    tag: v3.2.07.006
+    tag: v3.2.07.008
     versions:
-      - 3.2.7.6
+      - 3.2.7.8
   extended:
-    tag: v3.2.07.006-e
+    tag: v3.2.07.008-e
     versions:
-      - 3.2.7.6-e
+      - 3.2.7.8-e
   dws:
     tag: v3.2.07
     versions:
