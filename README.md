@@ -7,8 +7,8 @@ For more informations about SQL-Ledger and the code used for this image please v
 
 # Supported tags and respective Dockerfile links
 
-* SQL-Ledger improved by Tekki: [3.2.7.8, latest (main/Dockerfile)](https://github.com/Tekki/docker-sql-ledger/blob/master/main/Dockerfile).
-* SQL-Ledger extended by Tekki: [3.2.7.8-e, extended (extended/Dockerfile)](https://github.com/Tekki/docker-sql-ledger/blob/master/extended/Dockerfile).
+* SQL-Ledger improved by Tekki: [3.2.7.10, latest (main/Dockerfile)](https://github.com/Tekki/docker-sql-ledger/blob/master/main/Dockerfile).
+* SQL-Ledger extended by Tekki: [3.2.7.10-e, extended (extended/Dockerfile)](https://github.com/Tekki/docker-sql-ledger/blob/master/extended/Dockerfile).
 * SQL-Ledger original version by DWS: [3.2.7, dws (dws/Dockerfile)](https://github.com/Tekki/docker-sql-ledger/blob/master/dws/Dockerfile).
 
 # How to use this image
