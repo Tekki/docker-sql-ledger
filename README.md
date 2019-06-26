@@ -30,7 +30,7 @@ You find a sample compose file at [samples/docker-compose.yml](https://github.co
 | SL\_LATEX | 1 | use LaTeX |
 | SL\_LOGIN\_LANGUAGE | | language of the login screen |
 | SL\_PDFTK | 1 | use pdftk to combine PDFs |
-| SL\_SENDMAIL | "| /usr/sbin/sendmail -f <%from%> -t" | pipe to sendmail |
+| SL\_SENDMAIL | "\| /usr/sbin/sendmail -f <%from%> -t" | pipe to sendmail |
 | SL\_XELATEX | 1 | use XeLaTex instead of pdflatex |
 
 ## Folder Structure
