@@ -1,5 +1,5 @@
 ---
-version: '3'
+version: '3.7'
 
 services:
   db:
@@ -22,6 +22,10 @@ services:
   app:
     image: tekki/sql-ledger:latest
     container_name: sl-app
+    environment:
+      SL_HELPFUL_LOGIN: 1
+      SL_LOGIN_LANGUAGE: chd_utf
+    init: true
     ports:
       - 8080:80
     volumes:

@@ -19,15 +19,26 @@ Starting a SQL-Ledger instance is simple:
 
 The database is expected to run in a separate container and XeTeX is used as PDF engine.
 
+You find a sample compose file at [samples/docker-compose.yml](https://github.com/Tekki/docker-sql-ledger/blob/master/samples/docker-compose.yml).
+
+## Environment Variables
+
+| Name | Default Value | Description |
+| - | - | - |
+| SL\_DVIPDF | 0 | use dvipdf instead of pdflatex |
+| SL\_HELPFUL\_LOGIN | 0 | helpful error messages on login screen |
+| SL\_LATEX | 1 | use LaTeX |
+| SL\_LOGIN\_LANGUAGE | | language of the login screen |
+| SL\_PDFTK | 1 | use pdftk to combine PDFs |
+| SL\_SENDMAIL | "| /usr/sbin/sendmail -f <%%from%> -t" | pipe to sendmail |
+| SL\_XELATEX | 1 | use XeLaTex instead of pdflatex |
+
+## Folder Structure
+
 The container will create and use a volume located at `/var/sldata` with the following structure:
 
     ├ css
-    ├ etc
-    │  ├ sql-ledger.conf
-    │  └ wlprinter.conf
     ├ images
     ├ spool
     ├ templates
     └ users
-
-You find a sample compose file at [samples/docker-compose.yml](https://github.com/Tekki/docker-sql-ledger/blob/master/samples/docker-compose.yml).

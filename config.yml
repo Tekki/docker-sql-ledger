@@ -22,22 +22,26 @@ global:
 releases:
   main:
     latest: true
-    tag: v3.2.07.010
+    tag: v3.2.08.012
     versions:
-      - 3.2.7.10
+      - 3.2.8.12
   extended:
-    tag: v3.2.07.010-e
+    tag: v3.2.08.012-e
     versions:
-      - 3.2.7.10-e
+      - 3.2.8.12-e
   dws:
-    tag: v3.2.07
+    tag: v3.2.08
     versions:
-      - 3.2.7
+      - 3.2.8
 
 templates:
   - source: docker-entrypoint-sh.ep
     target: docker-entrypoint.sh
   - source: dockerfile.ep
     target: Dockerfile
+  - source: sql-ledger-conf.ep
+    target: sql-ledger.conf
   - source: sql-ledger-httpd-conf.ep
     target: sql-ledger-httpd.conf
+  - source: wlprinter-conf.ep
+    target: wlprinter.conf
