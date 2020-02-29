@@ -1,5 +1,6 @@
 ---
 docker:
+  buildkit: true
   from: debian:stretch
   image: tekki/sql-ledger
 
@@ -15,24 +16,29 @@ global:
     - spool
     - templates
     - users
+  description: '[SQL-Ledger](https://sql-ledger.com) is an open source ERP and accounting system.'
+  license: Artistic-2.0
   group: www-data
   url: sql-ledger
   user: www-data
+  title: SQL-Ledger
 
 releases:
   main:
-    latest: true
-    tag: v3.2.08.012
+    tag: v3.2.09.013
     versions:
-      - 3.2.8.12
+      - 3.2.9.13
+      - latest
   extended:
-    tag: v3.2.08.012-e
+    tag: v3.2.09.013-e
     versions:
-      - 3.2.8.12-e
+      - 3.2.9.13-e
+      - extended
   dws:
-    tag: v3.2.08
+    tag: v3.2.09
     versions:
-      - 3.2.8
+      - 3.2.9
+      - dws
 
 templates:
   - source: docker-entrypoint-sh.ep

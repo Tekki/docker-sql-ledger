@@ -64,6 +64,8 @@ ENV SL_PDFTK 1
 ENV SL_SENDMAIL="| /usr/sbin/sendmail -f <%%from%> -t"
 ENV SL_XELATEX 1
 
+%= $labels
+
 COPY sql-ledger.conf /usr/src
 COPY wlprinter.conf ./
 COPY docker-entrypoint.sh /usr/local/bin

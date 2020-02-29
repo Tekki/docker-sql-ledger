@@ -1,15 +1,17 @@
 <!-- this file is generated via docker-builder/generate.pl, do not edit it directly -->
 # What is SQL-Ledger?
 
-[SQL-Ledger](https://sql-ledger.com) is an open source ERP and accounting system. It gives you all the functionality you need for quotations, order management, invoices, payrolls and much more. The program is written in [Perl](https://www.perl.org), runs on an [Apache](https://httpd.apache.org) webserver, uses a [PostgreSQL](https://www.postgresql.org) database and is highly configurable.
+[SQL-Ledger](https://sql-ledger.com) is an open source ERP and accounting system.
+
+It gives you all the functionality you need for quotations, order management, invoices, payrolls and much more. The program is written in [Perl](https://www.perl.org), runs on an [Apache](https://httpd.apache.org) webserver, uses a [PostgreSQL](https://www.postgresql.org) database and is highly configurable.
 
 For more informations about SQL-Ledger and the code used for this image please visit [github.com/Tekki/sql-ledger](https://github.com/Tekki/sql-ledger).
 
 # Supported tags and respective Dockerfile links
 
-* SQL-Ledger improved by Tekki: [3.2.8.12, latest (main/Dockerfile)](https://github.com/Tekki/docker-sql-ledger/blob/master/main/Dockerfile).
-* SQL-Ledger extended by Tekki: [3.2.8.12-e, extended (extended/Dockerfile)](https://github.com/Tekki/docker-sql-ledger/blob/master/extended/Dockerfile).
-* SQL-Ledger original version by DWS: [3.2.8, dws (dws/Dockerfile)](https://github.com/Tekki/docker-sql-ledger/blob/master/dws/Dockerfile).
+* SQL-Ledger improved by Tekki: [3.2.9.13, latest (main/Dockerfile)](https://github.com/Tekki/docker-sql-ledger/blob/master/main/Dockerfile).
+* SQL-Ledger extended by Tekki: [3.2.9.13-e, extended (extended/Dockerfile)](https://github.com/Tekki/docker-sql-ledger/blob/master/extended/Dockerfile).
+* SQL-Ledger original version by DWS: [3.2.9, dws (dws/Dockerfile)](https://github.com/Tekki/docker-sql-ledger/blob/master/dws/Dockerfile).
 
 # How to use this image
 

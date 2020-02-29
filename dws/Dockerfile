@@ -34,8 +34,8 @@ RUN set -ex \
   done \
   && rm -r /var/lib/apt/lists/*
 
-ENV SL_VERSION 3.2.8
-ENV SL_TAG v3.2.08
+ENV SL_VERSION 3.2.9
+ENV SL_TAG v3.2.09
 ENV SL_URL="https://github.com/Tekki/sql-ledger/archive/$SL_TAG.tar.gz"
 
 COPY sql-ledger-httpd.conf /etc/apache2/sites-available/sql-ledger.conf
@@ -69,6 +69,17 @@ ENV SL_LOGIN_LANGUAGE=
 ENV SL_PDFTK 1
 ENV SL_SENDMAIL="| /usr/sbin/sendmail -f <%from%> -t"
 ENV SL_XELATEX 1
+
+ARG NOW=not-set
+LABEL org.opencontainers.image.authors="Tekki <tekki@tekki.ch>"
+LABEL org.opencontainers.image.created=$NOW
+LABEL org.opencontainers.image.description="SQL-Ledger is an open source ERP and accounting system."
+LABEL org.opencontainers.image.documentation=https://github.com/Tekki/docker-sql-ledger/blob/master/README.md
+LABEL org.opencontainers.image.licenses=Artistic-2.0
+LABEL org.opencontainers.image.source=https://github.com/Tekki/docker-sql-ledger/blob/master/dws/Dockerfile
+LABEL org.opencontainers.image.title=SQL-Ledger
+LABEL org.opencontainers.image.url=https://github.com/Tekki/docker-sql-ledger
+LABEL org.opencontainers.image.version=3.2.9
 
 COPY sql-ledger.conf /usr/src
 COPY wlprinter.conf ./
