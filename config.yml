@@ -25,16 +25,19 @@ global:
 
 releases:
   main:
-    tag: v3.2.09.013
+    sha256: 82a78d4b823f3af2853593414e29be30d664e6d281125dd77fda391a7c74b905
+    tag: v3.2.09.016
     versions:
-      - 3.2.9.13
+      - 3.2.9.16
       - latest
   extended:
-    tag: v3.2.09.013-e
+    sha256: 1bffc5cec79e8f7980b89abbda0c70d9b403cec390be57b60290966fedd2af35
+    tag: v3.2.09.016-e
     versions:
-      - 3.2.9.13-e
+      - 3.2.9.16-e
       - extended
   dws:
+    sha256: d1e36c087d153b1a4113d4441e4fc7bc5ec975d8b43d9f4c224f03a095cbc12b
     tag: v3.2.09
     versions:
       - 3.2.9

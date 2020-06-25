@@ -9,13 +9,10 @@ EXPOSE 80
 VOLUME /var/sldata
 WORKDIR /var/www/sql-ledger
 
-RUN set -ex \
-  && apt-get update && apt-get install -y --no-install-recommends \
-    texlive-xetex \
-    texlive-fonts-extra
+ENV TEXLIVE_LANG german
 
 RUN set -ex \
-  && apt-get install -y --no-install-recommends \
+  && apt-get update && apt-get install -y --no-install-recommends \
     apache2 \
     ca-certificates \
     gettext-base \
@@ -23,12 +20,10 @@ RUN set -ex \
     libjson-pp-perl \
     pdftk \
     postgresql-client \
+    texlive-xetex \
+    texlive-fonts-extra \
     wget \
-    vim
-
-ENV TEXLIVE_LANG german
-
-RUN set -ex \
+    vim \
   && for lang in "$TEXLIVE_LANG"; do \
     apt-get install -y "texlive-lang-$lang"; \
   done \
@@ -37,6 +32,7 @@ RUN set -ex \
 ENV SL_VERSION 3.2.9
 ENV SL_TAG v3.2.09
 ENV SL_URL="https://github.com/Tekki/sql-ledger/archive/$SL_TAG.tar.gz"
+ENV SL_SHA256 d1e36c087d153b1a4113d4441e4fc7bc5ec975d8b43d9f4c224f03a095cbc12b
 
 COPY sql-ledger-httpd.conf /etc/apache2/sites-available/sql-ledger.conf
 

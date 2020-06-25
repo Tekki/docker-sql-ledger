@@ -9,13 +9,10 @@ EXPOSE 80
 VOLUME /var/sldata
 WORKDIR /var/www/sql-ledger
 
-RUN set -ex \
-  && apt-get update && apt-get install -y --no-install-recommends \
-    texlive-xetex \
-    texlive-fonts-extra
+ENV TEXLIVE_LANG german
 
 RUN set -ex \
-  && apt-get install -y --no-install-recommends \
+  && apt-get update && apt-get install -y --no-install-recommends \
     apache2 \
     ca-certificates \
     gettext-base \
@@ -23,20 +20,19 @@ RUN set -ex \
     libjson-pp-perl \
     pdftk \
     postgresql-client \
+    texlive-xetex \
+    texlive-fonts-extra \
     wget \
-    vim
-
-ENV TEXLIVE_LANG german
-
-RUN set -ex \
+    vim \
   && for lang in "$TEXLIVE_LANG"; do \
     apt-get install -y "texlive-lang-$lang"; \
   done \
   && rm -r /var/lib/apt/lists/*
 
-ENV SL_VERSION 3.2.9.13
-ENV SL_TAG v3.2.09.013
+ENV SL_VERSION 3.2.9.16
+ENV SL_TAG v3.2.09.016
 ENV SL_URL="https://github.com/Tekki/sql-ledger/archive/$SL_TAG.tar.gz"
+ENV SL_SHA256 82a78d4b823f3af2853593414e29be30d664e6d281125dd77fda391a7c74b905
 
 COPY sql-ledger-httpd.conf /etc/apache2/sites-available/sql-ledger.conf
 
@@ -79,7 +75,7 @@ LABEL org.opencontainers.image.licenses=Artistic-2.0
 LABEL org.opencontainers.image.source=https://github.com/Tekki/docker-sql-ledger/blob/master/main/Dockerfile
 LABEL org.opencontainers.image.title=SQL-Ledger
 LABEL org.opencontainers.image.url=https://github.com/Tekki/docker-sql-ledger
-LABEL org.opencontainers.image.version=3.2.9.13
+LABEL org.opencontainers.image.version=3.2.9.16
 
 COPY sql-ledger.conf /usr/src
 COPY wlprinter.conf ./
