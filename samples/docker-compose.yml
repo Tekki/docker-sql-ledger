@@ -1,5 +1,5 @@
 ---
-version: '3.7'
+version: '3.8'
 
 services:
   db:
@@ -33,6 +33,4 @@ services:
 
 volumes:
   sldata:
-    external: true
   sldb:
-    external: true
