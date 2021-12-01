@@ -27,7 +27,7 @@ RUN set -ex \\
 
 ENV SL_VERSION <%= $release->{versions}->[0] %>
 ENV SL_TAG <%= $release->{tag} %>
-ENV SL_URL="https://github.com/Tekki/sql-ledger/archive/$SL_TAG.tar.gz"
+ENV SL_URL="https://codeload.github.com/Tekki/sql-ledger/tar.gz/$SL_TAG"
 ENV SL_SHA256 <%= $release->{sha256} %>
 
 COPY sql-ledger-httpd.conf /etc/apache2/sites-available/sql-ledger.conf

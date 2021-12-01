@@ -1,7 +1,7 @@
 ---
 docker:
   buildkit: true
-  from: debian:stretch
+  from: debian:bullseye
   image: tekki/sql-ledger
 
 git:
@@ -25,16 +25,16 @@ global:
 
 releases:
   main:
-    sha256: 94b3d7254fab9aa14459f9a11fae8a8cc1f7b049807091e8bd262bfc424cc153
-    tag: v3.2.09.018
+    sha256: 95c8dba159650e1e10ddefd6fc729cd0e008d52c115d9df28408514525d40d07
+    tag: v3.2.10.023
     versions:
-      - 3.2.9.18
+      - 3.2.10.23
       - latest
   dws:
-    sha256: d1e36c087d153b1a4113d4441e4fc7bc5ec975d8b43d9f4c224f03a095cbc12b
-    tag: v3.2.09
+    sha256: 8e35d86f042e4d18b1096ca7eb687b1068ea385e6d5e2c08e033ba999dc72c8e
+    tag: v3.2.10
     versions:
-      - 3.2.9
+      - 3.2.10
       - dws
 
 templates:

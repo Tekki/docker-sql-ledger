@@ -3,7 +3,7 @@
 #
 # do not edit it directly
 #
-FROM debian:stretch
+FROM debian:bullseye
 
 EXPOSE 80
 VOLUME /var/sldata
@@ -29,10 +29,10 @@ RUN set -ex \
   done \
   && rm -r /var/lib/apt/lists/*
 
-ENV SL_VERSION 3.2.9
-ENV SL_TAG v3.2.09
-ENV SL_URL="https://github.com/Tekki/sql-ledger/archive/$SL_TAG.tar.gz"
-ENV SL_SHA256 d1e36c087d153b1a4113d4441e4fc7bc5ec975d8b43d9f4c224f03a095cbc12b
+ENV SL_VERSION 3.2.10
+ENV SL_TAG v3.2.10
+ENV SL_URL="https://codeload.github.com/Tekki/sql-ledger/tar.gz/$SL_TAG"
+ENV SL_SHA256 8e35d86f042e4d18b1096ca7eb687b1068ea385e6d5e2c08e033ba999dc72c8e
 
 COPY sql-ledger-httpd.conf /etc/apache2/sites-available/sql-ledger.conf
 
@@ -75,7 +75,7 @@ LABEL org.opencontainers.image.licenses=Artistic-2.0
 LABEL org.opencontainers.image.source=https://github.com/Tekki/docker-sql-ledger/blob/master/dws/Dockerfile
 LABEL org.opencontainers.image.title=SQL-Ledger
 LABEL org.opencontainers.image.url=https://github.com/Tekki/docker-sql-ledger
-LABEL org.opencontainers.image.version=3.2.9
+LABEL org.opencontainers.image.version=3.2.10
 
 COPY sql-ledger.conf /usr/src
 COPY wlprinter.conf ./
