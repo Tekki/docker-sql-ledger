@@ -3,7 +3,7 @@
 #
 # do not edit it directly
 #
-FROM debian:bullseye
+FROM debian:bookworm
 
 EXPOSE 80
 VOLUME /var/sldata
@@ -16,7 +16,12 @@ RUN set -ex \
     apache2 \
     ca-certificates \
     gettext-base \
+    libarchive-extract-perl \
+    libarchive-zip-perl \
     libdbd-pg-perl \
+    libexcel-writer-xlsx-perl \
+    libio-socket-ssl-perl \
+    libmojolicious-perl \
     libjson-pp-perl \
     pdftk \
     postgresql-client \
@@ -29,10 +34,10 @@ RUN set -ex \
   done \
   && rm -r /var/lib/apt/lists/*
 
-ENV SL_VERSION 3.2.10.23
-ENV SL_TAG v3.2.10.023
+ENV SL_VERSION 3.2.12.37
+ENV SL_TAG v3.2.12.037
 ENV SL_URL="https://codeload.github.com/Tekki/sql-ledger/tar.gz/$SL_TAG"
-ENV SL_SHA256 95c8dba159650e1e10ddefd6fc729cd0e008d52c115d9df28408514525d40d07
+ENV SL_SHA256 30cc50947143c22a7e52842c4c7270af79263a3217fa6d9daf991688c0208999
 
 COPY sql-ledger-httpd.conf /etc/apache2/sites-available/sql-ledger.conf
 
@@ -75,7 +80,7 @@ LABEL org.opencontainers.image.licenses=Artistic-2.0
 LABEL org.opencontainers.image.source=https://github.com/Tekki/docker-sql-ledger/blob/master/main/Dockerfile
 LABEL org.opencontainers.image.title=SQL-Ledger
 LABEL org.opencontainers.image.url=https://github.com/Tekki/docker-sql-ledger
-LABEL org.opencontainers.image.version=3.2.10.23
+LABEL org.opencontainers.image.version=3.2.12.37
 
 COPY sql-ledger.conf /usr/src
 COPY wlprinter.conf ./

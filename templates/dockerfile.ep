@@ -12,7 +12,12 @@ RUN set -ex \\
     apache2 \\
     ca-certificates \\
     gettext-base \\
+    libarchive-extract-perl \\
+    libarchive-zip-perl \\
     libdbd-pg-perl \\
+    libexcel-writer-xlsx-perl \\
+    libio-socket-ssl-perl \\
+    libmojolicious-perl \\
     libjson-pp-perl \\
     pdftk \\
     postgresql-client \\

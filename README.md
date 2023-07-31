@@ -14,14 +14,14 @@ visit [github.com/Tekki/sql-ledger](https://github.com/Tekki/sql-ledger).
 
 # Supported tags and respective Dockerfile links
 
-* SQL-Ledger improved by Tekki: [3.2.10.23, latest (main/Dockerfile)](https://github.com/Tekki/docker-sql-ledger/blob/master/main/Dockerfile).
-* SQL-Ledger original version by DWS: [3.2.10, dws (dws/Dockerfile)](https://github.com/Tekki/docker-sql-ledger/blob/master/dws/Dockerfile).
+* SQL-Ledger improved by Tekki: [3.2.12.37, latest (main/Dockerfile)](https://github.com/Tekki/docker-sql-ledger/blob/master/main/Dockerfile).
+* SQL-Ledger original version by DWS: [3.2.12, dws (dws/Dockerfile)](https://github.com/Tekki/docker-sql-ledger/blob/master/dws/Dockerfile).
 
 # How to use this image
 
 Starting a SQL-Ledger instance is simple:
 
-    $ docker run -d --name my-sql-ledger -p 80:80 tekki/sql-ledger:tag
+    $ docker run -d --name my-sql-ledger -p 80:80 tekki/sql-ledger:latest
 
 The database is expected to run in a separate container and XeTeX is used as
 PDF engine.
@@ -31,15 +31,15 @@ You find a sample compose file at
 
 ## Environment Variables
 
-| Name | Default Value | Description |
-| - | - | - |
-| SL\_DVIPDF | 0 | use dvipdf instead of pdflatex |
-| SL\_HELPFUL\_LOGIN | 0 | helpful error messages on login screen |
-| SL\_LATEX | 1 | use LaTeX |
-| SL\_LOGIN\_LANGUAGE | | language of the login screen |
-| SL\_PDFTK | 1 | use pdftk to combine PDFs |
-| SL\_SENDMAIL | "\| /usr/sbin/sendmail -f <%from%> -t" | pipe to sendmail |
-| SL\_XELATEX | 1 | use XeLaTex instead of pdflatex |
+| Name                | Default Value                           | Description                            |
+|---------------------|-----------------------------------------|----------------------------------------|
+| SL\_DVIPDF          | 0                                       | use dvipdf instead of pdflatex         |
+| SL\_HELPFUL\_LOGIN  | 0                                       | helpful error messages on login screen |
+| SL\_LATEX           | 1                                       | use LaTeX                              |
+| SL\_LOGIN\_LANGUAGE |                                         | language of the login screen           |
+| SL\_PDFTK           | 1                                       | use pdftk to combine PDFs              |
+| SL\_SENDMAIL        | "\| /usr/sbin/sendmail -f <%from%> -t" | pipe to sendmail                       |
+| SL\_XELATEX         | 1                                       | use XeLaTex instead of pdflatex        |
 
 ## Folder Structure
 

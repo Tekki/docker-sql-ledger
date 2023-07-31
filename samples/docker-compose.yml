@@ -3,7 +3,7 @@ version: '3.8'
 
 services:
   db:
-    image: postgres
+    image: postgres:15
     container_name: sl-db
     environment:
       POSTGRES_PASSWORD: sql-ledger
@@ -11,13 +11,17 @@ services:
     volumes:
       - sldb:/var/lib/postgresql/data
 
-  dbdamin:
-    image: adminer
-    container_name: sl-dbadmin
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: sl-pgadmin
     environment:
-      ADMINER_DESIGN: nette
+      # change these settings or add a new user after the first login:
+      PGADMIN_DEFAULT_EMAIL: user@domain.com
+      PGADMIN_DEFAULT_PASSWORD: SuperSecret
     ports:
-      - 8081:8080
+      - 8085:80
+    volumes:
+      - sldbadmin:/var/lib/pgadmin
 
   app:
     image: tekki/sql-ledger:latest
@@ -34,3 +38,4 @@ services:
 volumes:
   sldata:
   sldb:
+  sldbadmin:
