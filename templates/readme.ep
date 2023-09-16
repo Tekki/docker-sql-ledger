@@ -46,7 +46,6 @@ You find a sample compose file at
 The container will create and use a volume located at `/var/sldata` with the
 following structure:
 
-    ├ css
     ├ images
     ├ spool
     ├ templates

@@ -2,6 +2,16 @@
 %= $warning
 
 envsubst '${SL_DVIPDF},${SL_HELPFUL_LOGIN},${SL_LATEX},${SL_LOGIN_LANGUAGE},${SL_PDFTK},${SL_SENDMAIL},${SL_XELATEX}' < /usr/src/sql-ledger.conf > sql-ledger.conf
-chown -hR <%= $global->{user} %>:<%= $global->{group} %> css/ spool/ templates/ users/
+
+FOLDERS="<%= join ' ', $global->{datafolders}->@* %>"
+for FOLDER in $FOLDERS; do
+    if [ ! -f <%= $global->{data} %>/$FOLDER ]; then
+        cp -r $FOLDER <%= $global->{data} %>/
+    fi
+
+    chown -hR <%= $global->{user} %>:<%= $global->{group} %> <%= $global->{data} %>/$FOLDER
+    rm -r $FOLDER
+    ln -s <%= $global->{data} %>/$FOLDER .
+done
 
 exec "$@"

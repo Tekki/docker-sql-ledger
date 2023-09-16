@@ -51,11 +51,6 @@ RUN set -ex \
   fi \
   && tar -xzf sql-ledger.tar.gz -C /var/www/sql-ledger --strip 1 \
   && cd /var/www/sql-ledger \
-  && mv css /var/sldata/ && ln -s /var/sldata/css . \
-  && mv images /var/sldata/ && ln -s /var/sldata/images . \
-  && mv spool /var/sldata/ && ln -s /var/sldata/spool . \
-  && mv templates /var/sldata/ && ln -s /var/sldata/templates . \
-  && mv users /var/sldata/ && ln -s /var/sldata/users . \
   && sed -ri \
     -e 's~^(\s*CustomLog)\s+\S+~\1 /proc/self/fd/1~g' \
     -e 's~^(\s*ErrorLog)\s+\S+~\1 /proc/self/fd/2~g' \
