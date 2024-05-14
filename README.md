@@ -14,7 +14,7 @@ visit [github.com/Tekki/sql-ledger](https://github.com/Tekki/sql-ledger).
 
 # Supported tags and respective Dockerfile links
 
-* SQL-Ledger improved by Tekki: [3.2.12.37, latest (main/Dockerfile)](https://github.com/Tekki/docker-sql-ledger/blob/master/main/Dockerfile).
+* SQL-Ledger improved by Tekki: [3.2.12.42, latest (main/Dockerfile)](https://github.com/Tekki/docker-sql-ledger/blob/master/main/Dockerfile).
 * SQL-Ledger original version by DWS: [3.2.12, dws (dws/Dockerfile)](https://github.com/Tekki/docker-sql-ledger/blob/master/dws/Dockerfile).
 
 # How to use this image

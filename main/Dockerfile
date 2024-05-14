@@ -34,10 +34,10 @@ RUN set -ex \
   done \
   && rm -r /var/lib/apt/lists/*
 
-ENV SL_VERSION 3.2.12.37
-ENV SL_TAG v3.2.12.037
+ENV SL_VERSION 3.2.12.42
+ENV SL_TAG v3.2.12.042
 ENV SL_URL="https://codeload.github.com/Tekki/sql-ledger/tar.gz/$SL_TAG"
-ENV SL_SHA256 30cc50947143c22a7e52842c4c7270af79263a3217fa6d9daf991688c0208999
+ENV SL_SHA256 07ab78fbaf4ad028c937740c00e1d1c280e7221c3615c6e47b091f1102b1ba3b
 
 COPY sql-ledger-httpd.conf /etc/apache2/sites-available/sql-ledger.conf
 
@@ -75,7 +75,7 @@ LABEL org.opencontainers.image.licenses=Artistic-2.0
 LABEL org.opencontainers.image.source=https://github.com/Tekki/docker-sql-ledger/blob/master/main/Dockerfile
 LABEL org.opencontainers.image.title=SQL-Ledger
 LABEL org.opencontainers.image.url=https://github.com/Tekki/docker-sql-ledger
-LABEL org.opencontainers.image.version=3.2.12.37
+LABEL org.opencontainers.image.version=3.2.12.42
 
 COPY sql-ledger.conf /usr/src
 COPY wlprinter.conf ./

@@ -24,10 +24,10 @@ global:
 
 releases:
   main:
-    sha256: 30cc50947143c22a7e52842c4c7270af79263a3217fa6d9daf991688c0208999
-    tag: v3.2.12.037
+    sha256: 07ab78fbaf4ad028c937740c00e1d1c280e7221c3615c6e47b091f1102b1ba3b
+    tag: v3.2.12.042
     versions:
-      - 3.2.12.37
+      - 3.2.12.42
       - latest
   dws:
     sha256: d068a37cdb2803ebaff5aa38715e2b6b97e3c20d61ef0dc391a90ddc050b10f6
